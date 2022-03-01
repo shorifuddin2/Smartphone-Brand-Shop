@@ -1,6 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Luxurious+Roman&family=Montserrat:wght@400;500&family=Open+Sans:wght@400;500&family=Playfair+Display&family=Poppins:wght@400;500&family=Roboto:wght@400;500&display=swap');
 body{
-    background-color: aquamarine;
+    font-family: 'Poppins', sans-serif;
+    background-color: darkgrey;
+}
+.container-section{
+    width: 95%;
+    margin: 0 auto;
 }
 h1{
-    text-align: center;
+    color: darkorange;
+}
+#search-button{
+    color: azure;
+    background-color: goldenrod;
+}
+@media (max-width: 668px) {
+    .title-section{
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+    }    
+    #heading{
+        width: 100%;
+        text-align: center;
+    }
+    #search-div{
+        width: 100%;
+    }
+}
+/* ========>>>>> End Search section  <<<======== */
+
+
+
+/* ========>>>>>Start detailes div section  <<<======== */
+
+@media (max-width: 768px){
+    body{
+        background-color: rgb(17, 16, 16);
+    }
+    .child-container{
+        background: fixed;
+    }
+    #detailes-div{
+        min-height: 590px;
+        color: white;
+        background-color: rgb(96, 243, 243);
+    }
+    .details-style-div{
+        height: 100%;
+    }
+    .ditales-image-style{
+        width: 80%;
+        height: 270px;
+        margin: 0 auto;
+    }
+    .card-bodyy{
+        overflow: hidden;
+        min-height: 350px;
+        padding: 5px 15px;
+    }
+    #card-section{
+        margin-top: -10px;
+    }
 }
