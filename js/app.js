@@ -4,7 +4,7 @@ const cardGroup = document.getElementById("card-group");
 const detailsDiv = document.getElementById("detailes-div");
 const cardSection = document.getElementById("card-section");
 
-// ====================>>> Click Handler Fun
+// ---------------->> Click Handler Fun <<------------------
 searchButton.addEventListener("click", () => {
     const inputValue = inputFiled.value;
     inputFiled.value = "";
@@ -12,21 +12,21 @@ searchButton.addEventListener("click", () => {
     detailsDiv.textContent = "";
 
     if (isNaN(inputValue)) {
-        searchPhoneFun(inputValue);
+        searchPhone(inputValue);
     }
     else {
         alert("Please enter a valid name");
     }
 })
 
-// ====================>>> Data fetch (All Phones)
-const searchPhoneFun = (phoneName) => {
+// ----------------->> Data fetch (All Phones) <<-------------------
+const searchPhone = (phoneName) => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${phoneName}`;
     fetch(url)
         .then(res => res.json())
         .then(phone => phonesConditionFun(phone.data))
 };
-searchPhoneFun("phone");
+searchPhone("phone");
 
 const phonesConditionFun = (phones) => {
     if (phones.length == 0) {
@@ -39,19 +39,19 @@ const phonesConditionFun = (phones) => {
             div.classList.add("col");
             div.innerHTML = ` 
                 <div class="card">
-                    <img src="${phone.image}" class="card-img-top phone-style p-5" alt="...">
+                    <img src="${phone.image}" class="card-img-top phone-style p-5" alt="Phone">
                     <div class="card-body">
                         <h5 class="card-title text-center">Phone Brand: ${phone.brand}</h5>
                         <p class="card-text text-center"> <span>Name:</span> ${phone.phone_name}.</p>
                     </div>
-                    <button id="detals-btn" class="bg-primary" onclick="seeMoreDetails('${phone.slug}')"  >More Details</button>
+                    <button id="detals-btn" class="bg-primary" onclick="seeMoreDetails('${phone.slug}')" >More Details</button>
                 </div>
             `;
             cardGroup.appendChild(div);
         })
     }
 };
-// ================>>> Data fetch with Id
+// -------------->> Data fetch with Id <<------------------
 const seeMoreDetails = (phoneId) => {
     const url = ` https://openapi.programming-hero.com/api/phone/${phoneId}`;
     fetch(url)

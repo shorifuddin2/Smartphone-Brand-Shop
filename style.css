@@ -28,11 +28,11 @@ h1{
         width: 100%;
     }
 }
-/* ========>>>>> End Search section  <<<======== */
+/* ------------>>>>> End Search section <<<--------------- */
 
 
 
-/* ========>>>>>Start detailes div section  <<<======== */
+/* ----------->>>>> Start detailes div section  <<<<<----------*/
 
 @media (max-width: 768px){
     body{
@@ -49,12 +49,12 @@ h1{
     .details-style-div{
         height: 100%;
     }
-    .ditales-image-style{
+    .details-image-style{
         width: 80%;
         height: 270px;
         margin: 0 auto;
     }
-    .card-bodyy{
+    .card-body{
         overflow: hidden;
         min-height: 350px;
         padding: 5px 15px;
