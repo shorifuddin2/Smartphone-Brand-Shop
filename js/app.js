@@ -1,14 +1,14 @@
 const inputFiled = document.getElementById("input-filed");
 const searchButton = document.getElementById("search-button");
-const cardGroup = document.getElementById("card-group");
+const cardGroupe = document.getElementById("card-group");
 const detailsDiv = document.getElementById("detailes-div");
 const cardSection = document.getElementById("card-section");
 
-// ---------------->> Click Handler Fun <<------------------
+// ---------------->> Click Event Handler  <<------------------
 searchButton.addEventListener("click", () => {
     const inputValue = inputFiled.value;
     inputFiled.value = "";
-    cardGroup.textContent = "";
+    cardGroupe.textContent = "";
     detailsDiv.textContent = "";
 
     if (isNaN(inputValue)) {
@@ -47,7 +47,7 @@ const phonesConditionFun = (phones) => {
                     <button id="detals-btn" class="bg-primary" onclick="seeMoreDetails('${phone.slug}')" >More Details</button>
                 </div>
             `;
-            cardGroup.appendChild(div);
+            cardGroupe.appendChild(div);
         })
     }
 };
@@ -59,7 +59,7 @@ const seeMoreDetails = (phoneId) => {
         .then(data => moreDetalsFun(data.data))
 }
 
-// ============>>>Show Detailes Fun
+// ----------------->> Show Detailes <<---------------
 const moreDetalsFun = (detalsInfo) => {
     detailsDiv.textContent = "";
     console.log(detalsInfo);
